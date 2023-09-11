@@ -35,24 +35,33 @@ class Pedido {
       this.dataPed, this.dataEnt, this.dataEntR, this.status, this.valortotal);
 }
 
-class Funcionarios {
+class Funcionario {
   String nome;
   String cargo;
   String email;
   String telefone;
 
-  Funcionarios(this.nome, this.cargo, this.email, this.telefone);
+  Funcionario(this.nome, this.cargo, this.email, this.telefone);
 }
 
-class Usuarios {
+class Fornecedor {
+  String nome;
+  String endereco;
+  String email;
+  String telefone;
+
+  Fornecedor(this.nome, this.endereco, this.email, this.telefone);
+}
+
+class Usuario {
   String nome;
   String email;
   String senha;
 
-  Usuarios(this.nome, this.email, this.senha);
+  Usuario(this.nome, this.email, this.senha);
 }
 
-class Enderecos {
+class Endereco {
   String rua;
   String numero;
   String complemento;
@@ -61,23 +70,23 @@ class Enderecos {
   String estado;
   String cep;
 
-  Enderecos(this.rua, this.numero, this.complemento, this.bairro, this.cidade,
+  Endereco(this.rua, this.numero, this.complemento, this.bairro, this.cidade,
       this.estado, this.cep);
 }
 
-class Pagamentos {
+class Pagamento {
   String tipo;
   double valor;
   String data;
 
-  Pagamentos(this.tipo, this.valor, this.data);
+  Pagamento(this.tipo, this.valor, this.data);
 }
 
 class Compra {
   int idProduto;
   int quantidade;
   double precoUnitario;
-  String dataCompra;
+  String data;
 
-  Compra(this.idProduto, this.quantidade, this.precoUnitario, this.dataCompra);
+  Compra(this.idProduto, this.quantidade, this.precoUnitario, this.data);
 }

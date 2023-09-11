@@ -17,14 +17,26 @@ class _ClientesState extends State<Clientes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Clientes"), titleTextStyle: DefaultTextStyle.of(context).style.copyWith(color: Colors.white, fontSize: 20) ,centerTitle: true, backgroundColor: Theme.of(context).primaryColor,),
-      body: ListView.builder(
-        itemBuilder: listTile,
-        itemCount: clientes.length,
+        appBar: AppBar(
+          title: const Text("Clientes"),
+          titleTextStyle: DefaultTextStyle.of(context)
+              .style
+              .copyWith(color: Colors.white, fontSize: 20),
+          centerTitle: true,
+          backgroundColor: Theme.of(context).primaryColor,
         ),
-      );
+        body: ListView.builder(
+          itemBuilder: listTile,
+          itemCount: clientes.length,
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () async {
+            await Navigator.pushNamed(context, "formClientes");
+            setState(() {});
+          },
+        ));
   }
-
 
   Widget listTile(BuildContext context, index) {
     Cliente c = clientes[index];
@@ -36,11 +48,8 @@ class _ClientesState extends State<Clientes> {
       trailing: const Icon(Icons.arrow_forward),
       onTap: () async {
         await Navigator.pushNamed(context, "formClientes", arguments: index);
-        setState(() { });
-      } ,
-
+        setState(() {});
+      },
     );
-
   }
 }
-
